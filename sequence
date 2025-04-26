@@ -1,0 +1,90 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Student Welfare Portal Sequence Diagram" id="sequence-diagram">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Lifelines -->
+        <mxCell id="2" value="Student" style="shape=umlLifeline;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="50" width="100" height="400" as="geometry" />
+        </mxCell>
+
+        <mxCell id="3" value="Portal (Frontend)" style="shape=umlLifeline;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="100" height="400" as="geometry" />
+        </mxCell>
+
+        <mxCell id="4" value="Server (Backend)" style="shape=umlLifeline;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="50" width="100" height="400" as="geometry" />
+        </mxCell>
+
+        <mxCell id="5" value="Database" style="shape=umlLifeline;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="50" width="100" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- Messages -->
+
+        <!-- Student logs in -->
+        <mxCell id="6" value="Login()" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Portal sends login credentials -->
+        <mxCell id="7" value="Verify Credentials" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Server checks database -->
+        <mxCell id="8" value="Query(User Table)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Database returns success -->
+        <mxCell id="9" value="User Found" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="5" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Server responds to portal -->
+        <mxCell id="10" value="Authentication Success" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="4" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Portal redirects student -->
+        <mxCell id="11" value="Redirect to Dashboard" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="3" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Student submits welfare request -->
+        <mxCell id="12" value="Submit Welfare Request()" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Portal sends data to server -->
+        <mxCell id="13" value="Send Request Data" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Server stores request -->
+        <mxCell id="14" value="Insert(Request Table)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Database confirms save -->
+        <mxCell id="15" value="Request Saved" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="5" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Server notifies portal -->
+        <mxCell id="16" value="Welfare Request Submitted" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="4" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Portal shows confirmation -->
+        <mxCell id="17" value="Show Confirmation" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="3" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
